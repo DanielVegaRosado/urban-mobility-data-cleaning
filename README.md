@@ -37,17 +37,23 @@ Simulated measurement errors (GPS glitches) in the `distance_km` variable.
 
 ## Visualizations
 
-The script generates four key visualizations to validate the cleaning process:
-1.  **Null Heatmap (Dirty):** Shows the injected missing data.
-2.  **Null Heatmap (Clean):** Confirms successful imputation.
-3.  **Scatter Plot (Outliers):** Identifies data points outside the IQR limits (marked in red).
-4.  **Scatter Plot (Clean):** Shows the distribution after clipping.
+Here is a visual representation of the data quality issues detected and fixed during the process.
+
+### 1. Missing Data Detection
+The red lines indicate missing values (Nulls) injected into the dataset. The randomness of the distribution confirms there is no structural bias in the missing data.
+
+![Missing Values Heatmap](heatmap.png)
+
+### 2. Outlier Analysis
+Using the IQR method, we identified extreme values in `distance_km`. The red points represent data that falls outside the statistical thresholds and was subsequently clipped.
+
+![Outliers Scatter Plot](outliers.png)
 
 ## How to Run
 
 1.  Clone the repository:
     ```bash
-    git clone https://github.com/DanielVegaRosado/urban-mobility-cleaning.git
+    git clone https://github.com/DanielVegaRosado/urban-mobility-data-cleaning.git
     ```
 2.  Install dependencies:
     ```bash
@@ -62,4 +68,5 @@ The script generates four key visualizations to validate the cleaning process:
 The final output is a clean CSV file ready for ML modeling, with no missing values and normalized distribution of distances.
 
 ---
+
 *Author: Daniel Vega Rosado | Computer Engineering Student*
